@@ -1,6 +1,6 @@
 # A concept of an economically ASIC resistant and FPGA prone modification of the SHA3 hash function.
 
-It diistilled down to the following architecture:
+## It distilled down to the following architecture:
 - crossbar capacitance and thus power consumption grows at O(n²) withbthe width of an arbitrary permutation
 - SHA3 has 1600 wires between functions, but if only 100 is permuted randomly at every epoch between some stages, then it will be 256 times cheaper than a n 1600x1600 one
 - this permutation can be synthesized for FPGAs at every mining epoch, while an ASIC desugner might be forced to apply the 1600bits crossbar
