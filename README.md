@@ -17,3 +17,6 @@
 ## Results
 
 According to power estimations by AI, this brings ASIC calculations costs roughly equal or worse to those of FPGAs. And there hasn't yet been a tuning of diffuculty based tweaking of the crossbars relative sizes, which is a game changer as it can increase the cost ratio between ASIC and FPGA mining quadratically proportional to a single simple algorithm parameter.
+
+## Ideas
+- the role of the SBOX is to multiply the number of bits to be addressed for every single output bit being calculated, so it would grow too large, like 16 bits or more, it might just be replacable by some small.and fast, not so secure hash or prng like murmur3, fnv1, crc², et. al., and probably.the goes for the XOR trees too, while the horizontal and verrtical computatioms being substantially different, is also nice to have
