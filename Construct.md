@@ -17,5 +17,5 @@
 
 5) designing the permutation with a crossbar requires 32768² number of switches in an ASIC to allow for all possible combinations, while.only a 256 input and output crossbar in the FPGA, taking (32768/256)²~16384 times more power consumption, and btw. one time chip surface manufaturing costs too
 
-6) by tuning the size of the randomly selected permutation, the ~200x bandwidth based power consumption, and the 16000x crossbar power consumption can be properly adjusted, however the state size may need to be increased if the mentioned wire collisions start to become significant
+6) by tuning the size of the randomly selected permutation, the ~200x bandwidth based power consumption, and the 16000x crossbar power consumption can be properly adjusted, however the state size may need to be increased if the mentioned wire collisions start to become significant: the state design may need a deeper shape in the number of sheets afterall
   
