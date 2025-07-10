@@ -19,3 +19,8 @@
 
 6) by tuning the size of the randomly selected permutation, the ~200x bandwidth based power consumption, and the 16000x crossbar power consumption can be properly adjusted, however the state size may need to be increased if the mentioned wire collisions start to become significant: the state design may need a deeper shape in the number of sheets afterall
   
+# Another example
+A state if 32x32x64 bit shape can easily sustain a permutation of 1024 bits with just around 1% wires colliding into the same input hashes, raising bandwidth power consumption with RAM based bitwise implementation tom1000x. While (65536/1024)²~4000x the power consumption of the ASIC crossbar compared to that of an FPGA's.
+
+# Summary
+Watever the exact ASIC advantage may be, the structure can be addressed to eliminate its economical advantage in power consumption too, not just in one time manufacturing costs.
