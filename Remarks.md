@@ -1,4 +1,4 @@
 - the assumption of 200x memory bandwidth is wrong in thi sense
 - a separate permutation stage with single fan-out is always cheap in RAM
 - what is needed is a high fan-out for the permutation stage, ie. hashing myriads of words together in some pattern that is easy with some hardware shifts and multiply-accumlate units, but causes bandwidth growth for the RAM
-- the RAM based permutation is always a single operation unfortunatly - unleeess... maybe if multiple parallel permutations with high fan out are taken into account(?)
+- the RAM based permutation is always a single operation unfortunatly - unleeess... maybe if multiple parallel permutations with high fan-outs are taken into account(?)
