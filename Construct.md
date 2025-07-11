@@ -1,3 +1,20 @@
+# Intro
+When the cryptocurrency Ravencoin introduced the X16R proof of work based on the ever changing combination of 16 SHA3 finalist hashes, i saw, that this construct might be FOGA prone over ASICs, if enough time was given to re-synthesize the newest combinatiom every time. Since Bitcoin's specification says, that the 6th last block is what can be considered stable, i'd suggest to take the -12th one to also have sufficient time to forge new chip configurations. However X16R has proven to be possible to be made in ASICs, as it only increased a one time manufacturing cost for each chip, making production economically viable, as the currency's value increased. Then they had to switch to X16Rv2 by adding a 17th hash to the group, which actually probably didn't solve anything, but the currency plummeted eversince, so it looks like there's no sense making new ASICs...
+
+Two takeaways:
+1) a PoW, whose architecture changes substantially over time is costly to make in ASICs - yet not impossible, because...
+2) even such a hash has to consume more power in ASICs as in FPGAs, otherwise the increasing value of the cureency will make ASICs economically viable sooner or later
+
+# Story
+
+At first i made the same mistake as Ravencoin's designers, by taking SHA3 and adding a full blown 1600 bit permutation additionally to its Rho-Pi permutation stage. This should have increased ASIC manufacturing costs only, because FPGA is the mature construct to handle such a complex wiring topology, so hopefully ASICs won't possibly compete in mnaufacturing price. Still there was the power consumption, where they can still outperform FPGAs even if made and sold at the same price... Furthermore inhad to avoid the option of making multiple single bit SHA3 engines calculating with several different nonce bit by bit. This could allow for a very efficient implementation of the permutation by loading all the states of these hashes into a RAM, and doing the permutations bit by bit, yet for multiple instances of hashes. The first one, the power consumption can be addressed by making the changing random permutation's width smaller than the 1600 but state, and taking just a handful of wires to permute. This way the ASIC designer is forced to keep an 1600 bit wide crossbar in their design. Crossbars cost O(n²) power where n is the width of the permutation. Addressing the RAM based serialized approach was done by placing the random smaller permutation after the Chi function and before the Theta. This way any Theta intermediate parity bit requires the retreival of 50 Chi input bits, especially if the Chi-s are considered as S-boxes and are also shuffled for each new PoW calculation.
+
+This all resulted in a generic PRNG construct, having a similar 3D state like the SHA3, in whose sheets parallel to its front, horizontal and vertical calculations are taking place. Such, that either a full horizontal row or a full vertical column is needed to be able to perform the calculation. Multiplication based hashes are so.
+
+Also, the power consumption of the permutation are must play a significant role, so fast hashes with low powerconsumption are necessary.
+
+Then the ever changing randomized partial permutation of the state takes place in depth, perpendicular to the sheets. This permutation also plays a significant role in making the RAM addressing based permutation impossible, because it multiplies the necessary bandwidth taken to calculate any and every sheet's bits. Namely the vertical hash's minimal bit width and the that ofvthe horizontal's would multiply if sheets could be processed indelendently. This way this multiple reprensenting the sheet size gets further increased by as many input sheets will be required for the computation of any output sheet.
+
 # Design
 - we best need a cube shaped state with side length N, and N³ number of bits
 - let's suppose N=32, so state size is 32768 bits
