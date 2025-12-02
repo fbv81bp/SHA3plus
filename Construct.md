@@ -41,3 +41,7 @@ A state if 32x32x64 bit shape can easily sustain a permutation of 1024 bits with
 
 # Summary
 Watever the exact ASIC advantage may be, the structure can be addressed to eliminate its economical advantage in power consumption too, not just in one time manufacturing costs.
+
+# Though all my remarks...
+
+ChatGPT and Claude agree on that, that if i have a 4096 bits wide state, and permute 512 bits of it, then i must hash 1200 bits at every iteration to be sure that at least 128 bits of the permuted ones will be included in those hashes. That's nice! By performing 37x 32 bit wide hashes, i have an average chance of each one depends on around 128/37~3.5 randomized bits ie. previous hashes. What this means to RAM based calculation and crossbar sizes in ASICs vs. FPGAs is still a question(!).
