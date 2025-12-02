@@ -13,7 +13,9 @@ So this is not going to increase memory bandwidth. Albeit the goal should be tha
 2) perform the entire partial permutation of the state, not just parts of it, because otherwise not all hashes are going to be affected
 3) repeat
 
-One may have a large set of small partial permutations to be performed before each hash, so that permutations fit into such crossbars that are inherently embedded into FPGAs. 
+One may have a large set of small partial permutations to be performed before each hash, so that permutations fit into such crossbars that are inherently embedded into FPGAs.
+
+BTW. there probably is a tradeoff inbetween calculating 1 single hash every permutation or all of them: if a portion of the state is randomly permuted and we have multiple different permutations (perhaps also randomized by inter state results) then it is a question of collisions how many hashes are reasonful to have at 1 stage!
 
 ## Other thoughts on earlier specs
 
