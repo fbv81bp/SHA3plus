@@ -1,5 +1,5 @@
 ## The Problem
-### There is no way of prohibiting the permutation being done separately in a biwise manner, as long as vertical and horizontal hashes are computed in separate steps.
+### There is no way of prohibiting the permutation being done separately in a bitwise manner, as long as vertical and horizontal hashes are computed in separate steps.
 
 1) horizontal hashes
 2) permutation-1
