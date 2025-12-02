@@ -10,7 +10,7 @@
 So this is not going to increase memory bandwidth. Albeit the goal should be that for each bit read from memory and computed in any hash a myriad of other random bits had to be re-read again and again. This might be achieved by hashes and permutations being applied alternatively in a very fine grain multiple step manner:
 
 1) one next hash, but just a single one
-2) perform the entire partial permutation of the state, not just parts of it, because otherwise not all hashes are going to affected
+2) perform the entire partial permutation of the state, not just parts of it, because otherwise not all hashes are going to be affected
 3) repeat
 
 One may have a large set of small partial permutations to be performed before each hash, so that permutations fit into such crossbars that are inherently embedded into FPGAs. 
